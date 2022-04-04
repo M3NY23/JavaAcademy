@@ -22,7 +22,7 @@ public class TestCalculator {
 
     @Test
     public void isPrime() {
-        assertTrue(Calculator.isPrime(3) == true);
+        assertTrue(Calculator.isPrime(6) == false);
     }
 
     @Test
