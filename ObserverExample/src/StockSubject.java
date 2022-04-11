@@ -3,9 +3,7 @@ import java.util.List;
 
 public class StockSubject implements Subject {
 
-    private double ibmPrice;
-    private double applePrice;
-    private double googlePrice;
+    Stock stock;
 
     private List<Observer> observers = new ArrayList<>();
 
@@ -17,27 +15,16 @@ public class StockSubject implements Subject {
     @Override
     public void ungister(Observer observer) {
         observers.remove(observer);
-        
     }
 
     @Override
     public void notifyObserver() {
-        observers.stream().forEach(observer -> observer.update(ibmPrice, applePrice, googlePrice));
+        observers.stream().forEach(observer -> observer.update(stock));
     }
 
-    public void setIbmPrice(double ibmPrice) {
-        this.ibmPrice = ibmPrice;
+    public void setStockPrice(double price) {
+        this.stock.setPrice(price);
         notifyObserver();
     }
-
-    public void setApplePrice(double applePrice) {
-        this.applePrice = applePrice;
-        notifyObserver();
-    }
-
-    public void setGooglePrice(double googlePrice) {
-        this.googlePrice = googlePrice;
-        notifyObserver();
-    }
-
+    
 }

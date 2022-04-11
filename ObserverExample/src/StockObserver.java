@@ -9,9 +9,8 @@ public class StockObserver implements Observer {
     }
 
     @Override
-    public void update(double ibmPrice, double applePrice, double googlePrice) {
-        System.out.println("StockObserver [observerID=" + observerID + ", googlePrice=" + googlePrice + ", ibmPrice=" + ibmPrice
-        + ", applePrice=" + applePrice + "]");
-    }
+    public void update(Stock stock) {
+        System.out.println("Observer ID: "+observerID+" "+stock.toString());
+    }   
 
 }

@@ -1,12 +1,23 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class App {
+
     public static void main(String[] args) throws Exception {
         
-        StockSubject stockSubject = new StockSubject();
-        StockObserver observer1 = new StockObserver(stockSubject);
-        stockSubject.setApplePrice(127);
-        stockSubject.setGooglePrice(230);
-        stockSubject.setIbmPrice(305);
+        List<Stock> stocks = new ArrayList<Stock>(); 
 
-        StockRandom.getRandomPrice(stockSubject, "IBM", 305);
+        stocks.add(new Stock("lenovo", 230.50));
+        stocks.add(new Stock("apple", 260.99));
+        stocks.add(new Stock("asus", 240.50));
+
+    
+        StockObserver observer1 = new StockObserver(stocks.get(2));
+        StockObserver observer2 = new StockObserver(stocks.get(0));
+
+        StockRandom.getRandomPrice(stocks.get(2));
+        StockRandom.getRandomPrice(stocks.get(0)); 
+        StockRandom.getRandomPrice(stocks.get(1));  
+
     }
 }
