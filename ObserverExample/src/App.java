@@ -14,6 +14,7 @@ public class App {
     
         StockObserver observer1 = new StockObserver(stocks.get(2));
         StockObserver observer2 = new StockObserver(stocks.get(0));
+        // StockObserver observer3 = new StockObserver(stocks.get(1));
 
         StockRandom.getRandomPrice(stocks.get(2));
         StockRandom.getRandomPrice(stocks.get(0)); 
